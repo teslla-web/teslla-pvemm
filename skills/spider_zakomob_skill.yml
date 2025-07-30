@@ -1,0 +1,21 @@
+spider_zakoMob_skill:
+  Skills:
+  - aura{auraname=loop;d=2000;i=10;oT=spider_zakomob1_loop} @self
+spider_zakomob1_loop:
+  Skills:
+  - randomskill{s=spider_zakoMob_attack1,spider_zakoMob_attack2} @self
+spider_zakoMob_attack1:
+  Conditions:
+  - hasaura{aura=silent} false
+  Skills:
+  - aura{auraName=silent;d=100;rd=true} @self
+  - damage{a=5} @LivingInCone{a=35;r=10} 
+spider_zakoMob_attack2:
+  Conditions:
+  - hasaura{aura=silent} false
+  Skills:
+  - aura{auraName=silent;d=100;rd=true} @self
+  - mounttarget{cooldown=20;range=5} @playersInRadius{radius=3;a=45} ~onAttack 
+  - delay 40
+  - jsonmessage{message="クモが毒を吐いてきた!"} @target ~onAttack
+  - summonAreaEffectCloud{particle=dripping_obsidian_tear;type=POISON;level=0;radius=1;duration=100;waitTime=0;waitTick=0;range=5} @origin ~onAttack                                                                                       

@@ -1,0 +1,41 @@
+spider_zakoMob2_skill:
+  Skills:
+  - aura{auraname=loop;d=2000;i=10;oT=spider_zakomob2_loop} @self
+spider_zakomob2_loop:
+  Skills:
+  - randomskill{s=spider_zakoMob2_attack1,spider_zakoMob2_attack2,spider_zakoMob2_attack3} @self
+spider_zakoMob2_attack1:
+  Conditions:
+  - hasaura{aura=silent} false
+  Skills:
+  - aura{auraName=silent;d=100;rd=true} @self
+  - damage{a=5} @LivingInCone{a=35;r=10} 
+spider_zakoMob2_attack2:
+  Conditions:
+  - hasaura{aura=silent} false
+  Skills:
+  - aura{auraName=silent;d=100;rd=true} @self
+  - mounttarget{cooldown=20;range=5} @playersInRadius{radius=3;a=45} ~onAttack 
+  - delay 40
+  - jsonmessage{message="クモが毒を吐いてきた!"} @target ~onAttack
+  - summonAreaEffectCloud{particle=dripping_obsidian_tear;type=POISON;level=0;radius=1;duration=100;waitTime=0;waitTick=0;range=5} @origin ~onAttack                                                                                       
+spider_zakoMob2_attack3:
+  Conditions:
+    - hasaura{aura=silent} false
+  Skills:
+    - aura{auraName=silent;d=100;rd=true} @self
+    - projectile{
+        bulletType=BLOCK;
+        bulletMaterial=COBWEB;
+        v=4;
+        hR=1;
+        vR=1;
+        i=1;
+        onHit=spider_zakoMob2_attack3_hit
+      } @PlayersInRadius{r=15}
+spider_zakoMob2_attack3_hit:
+  Skills:
+    - damage{a=5}
+    - potion{type=slow;duration=20;level=0} @target
+    - effect:particles{p=snowflake;amount=10;hS=0.3;vS=0.3;speed=0.1} @target
+    - jsonmessage{message="クモの糸に絡まった!"} @target

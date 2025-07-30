@@ -1,0 +1,36 @@
+spider_zakoMob3_skill:
+  Skills:
+  - aura{auraname=loop;d=2000;i=10;oT=spider_zakomob3_loop} @self
+spider_zakomob3_loop:
+  Skills:
+  - randomskill{s=spider_zakoMob3_attack1,spider_zakoMob3_attack2,spider_zakoMob3_attack3} @self
+spider_zakoMob3_attack1:
+  Conditions:
+    - hasaura{aura=silent} false
+  Skills:
+    - aura{auraName=silent;d=100;rd=true} @self
+    - potion{type=SLOW;d=60;l=5} @self
+    - particlering{c=#FF0000;amount=1;points=20;r=5;repeat=59;repeatInterval=1} @self
+    - sound{s=minecraft:block.note_block.pling;v=1;p=1.8} @self
+    - delay 60
+    - damage{a=5} @LivingEntitiesInRadius{r=5}
+
+
+spider_zakoMob3_attack2:
+  Conditions:
+  - hasaura{aura=silent} false
+  Skills:
+  - aura{auraName=silent;d=100;rd=true} @self
+  - mounttarget{cooldown=20;range=5} @playersInRadius{radius=3;a=45} ~onAttack 
+  - delay 40
+  - jsonmessage{message="クモが強力な毒を吐いてきた!"} @target ~onAttack
+  - summonAreaEffectCloud{particle=spell_mob;color=0,255,128;type=POISON;level=1;radius=1;duration=100;waitTime=0;waitTick=0;range=5} @origin ~onAttack                                                                                     
+spider_zakoMob3_attack3:
+  Conditions:
+  - hasaura{aura=silent} false
+  Skills:
+  - aura{auraName=silent;d=100;rd=true} @self
+  - summon{type=spider_zakomob_4;amount=1;cooldown=20;range=5} @playersInRadius{radius=3;a=45} ~onAttack
+
+
+
