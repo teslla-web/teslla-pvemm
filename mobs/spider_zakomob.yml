@@ -1,0 +1,80 @@
+spider_zakomob_1:
+    Type: SPIDER
+    Display: 'spider_zakoMob'
+    Health: 10
+    Damage: 1
+    Armor: 0
+    Options:
+        AlwaysShowName: true
+        invincible: false
+        NoAI: false
+        preventOtherDrops: true
+    AIGoalSelectors:
+    - clear
+    - 0 meleeattack
+    AITargetSelectors:
+    - clear
+    - 0 player
+    Skills:
+    - scale{s=1} @self ~onSpawn
+    - skill{skill=spider_zakoMob_skill} @self ~onSpawn
+spider_zakomob_2:
+    Type: SPIDER
+    Display: 'spider_zakoMob2'
+    Health: 15
+    Damage: 2
+    Armor: 0
+    Options:
+        AlwaysShowName: true
+        invincible: false
+        NoAI: false
+        preventOtherDrops: true
+    AIGoalSelectors:
+    - clear
+    - 0 meleeattack
+    AITargetSelectors:
+    - clear
+    - 0 player
+    Skills:
+    - scale{s=1.25} @self ~onSpawn
+    - skill{skill=spider_zakoMob2_skill} @self ~onSpawn
+spider_zakomob_3:
+    Type: SPIDER
+    Display: 'spider_zakoMob3'
+    Health: 30
+    Damage: 4
+    Armor: 0
+    Options:
+        AlwaysShowName: true
+        invincible: false
+        NoAI: false
+        preventOtherDrops: true
+    AIGoalSelectors:
+    - clear
+    - 0 meleeattack
+    AITargetSelectors:
+    - clear
+    - 0 player
+    Skills:
+    - scale{s=2} @self ~onSpawn
+    - skill{skill=spider_zakoMob3_skill} @self ~onSpawn        
+spider_zakomob_4:
+    Type: SPIDER
+    Display: 'spider_zakoMob'
+    Health: 10
+    Damage: 1
+    Armor: 0
+    Options:
+        AlwaysShowName: true
+        invincible: false
+        NoAI: false
+        preventOtherDrops: true
+    AIGoalSelectors:
+    - clear
+    - 0 meleeattack
+    AITargetSelectors:
+    - clear
+    - 0 player
+    Skills:
+    - scale{s=-1} @self ~onSpawn
+    - skill{skill=spider_zakoMob_skill} @self ~onSpawn
