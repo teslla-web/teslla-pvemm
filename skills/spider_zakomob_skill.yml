@@ -6,10 +6,14 @@ spider_zakomob1_loop:
   - randomskill{s=spider_zakoMob_attack1,spider_zakoMob_attack2} @self
 spider_zakoMob_attack1:
   Conditions:
-  - hasaura{aura=silent} false
+    - hasaura{aura=silent} false
   Skills:
-  - aura{auraName=silent;d=100;rd=true} @self
-  - damage{a=5} @LivingInCone{a=35;r=10} 
+    - aura{auraName=silent;d=100;rd=true} @self
+    - potion{type=SLOW;d=60;l=5} @self
+    - particlering{c=#FF0000;amount=1;points=20;r=5;repeat=59;repeatInterval=1} @self
+    - sound{s=minecraft:block.note_block.pling;v=1;p=1.8} @self
+    - delay 60
+    - damage{a=2} @PlayersInRadius{r=5}
 spider_zakoMob_attack2:
   Conditions:
   - hasaura{aura=silent} false

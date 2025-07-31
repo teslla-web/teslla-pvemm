@@ -13,7 +13,7 @@ spider_zakoMob3_attack1:
     - particlering{c=#FF0000;amount=1;points=20;r=5;repeat=59;repeatInterval=1} @self
     - sound{s=minecraft:block.note_block.pling;v=1;p=1.8} @self
     - delay 60
-    - damage{a=5} @LivingEntitiesInRadius{r=5}
+    - damage{a=5} @PlayersInRadius{r=5}
 
 
 spider_zakoMob3_attack2:
