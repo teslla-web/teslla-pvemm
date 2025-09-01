@@ -1,15 +1,3 @@
-support_spider:
-  Type: SPIDER
-  Display: "§a支援クモ"
-  Health: 20
-  Damage: 2
-  Options:
-    MovementSpeed: 0.28
-    PreventOtherDrops: true
-    Despawn: true
-  Skills:
-    - skill{s=support_spider_loop} @self ~onSpawn
-
 support_spider_loop:
   Skills:
     - randomskill{s=support_spider_buff1,support_spider_buff2} @self
