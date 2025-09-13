@@ -1,6 +1,6 @@
 spider_zakomob_1:
     Type: SPIDER
-    Display: 'spider_zakoMob'
+    Display: '子クモ'
     Health: 10
     Damage: 1
     Armor: 0
@@ -20,7 +20,7 @@ spider_zakomob_1:
     - skill{skill=spider_zakoMob_skill} @self ~onSpawn
 spider_zakomob_2:
     Type: SPIDER
-    Display: 'spider_zakoMob2'
+    Display: 'クモ'
     Health: 15
     Damage: 2
     Armor: 0
@@ -40,7 +40,7 @@ spider_zakomob_2:
     - skill{skill=spider_zakoMob2_skill} @self ~onSpawn
 spider_zakomob_3:
     Type: SPIDER
-    Display: 'spider_zakoMob3'
+    Display: '毒クモ'
     Health: 30
     Damage: 4
     Armor: 0
@@ -60,7 +60,7 @@ spider_zakomob_3:
     - skill{skill=spider_zakoMob3_skill} @self ~onSpawn        
 spider_zakomob_4:
     Type: SPIDER
-    Display: 'spider_zakoMob'
+    Display: '子クモ'
     Health: 10
     Damage: 1
     Armor: 0
